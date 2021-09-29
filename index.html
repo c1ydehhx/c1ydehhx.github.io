@@ -18,9 +18,9 @@
             font-size: 32px;
           }
           .p2 {
-            font-family: "微軟正黑體", Times, serif;
+            font-family: "Noto Sans TC", Times, serif;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
           }
           .p3 {
             font-family: "Microsoft YaHei UI", Times, serif;
@@ -36,13 +36,24 @@
             max-width:200px;
           }
           th.fix_2 {
-            min-width:15px;
-            max-width:15px
+            min-width:200px;
+            max-width:200px
           }
+		  th.fix_3 {
+            min-width:543px;
+            max-width:543px
+          }
+		  th.fix_4 {
+            min-width:35px;
+            max-width:35px
+          }
+		  th.about {
+			top: 5px
+		  }
           #nav {
-            width: 300px;
+            width: 141px;
             height: 300px;
-            position:fixed;right:0;top:70%
+            position:fixed;right:0;top:85%
           }
       </style>
     </head>
@@ -53,18 +64,23 @@
         <p class="p2">
           👨‍💻 Competitive programming (2020) / ☕ Java development → 🤖 Discord Application development (recent)
         </p>
-        <img src="hr.jpg">
+        <img src="img/hr.jpg" width="1500" height="31">
         <br />
         <table>
           <tr>
-            <th>
-              <img src="uriah.jpg" width="193" height="250">
+            <th >
+              <img src="img/uriah.jpg" height="300">
             </th>
-            <th class="vertical_fix">
-              <img src="vertical.jpg" width="10" height="270">
+			<th class="fix_4">
+			</th>
+            <th class="vertical_fix" valign="top">
+              <img src="img/vertical.jpg" width="10" height="500">
             </th>
-            <th>
-              <p class="p3">
+			<th class="fix_4">
+			</th>
+            <th style="" valign="top">
+              <br />
+			  <p class="p3">
                 About Me
               </p>
               <p class="p2">
@@ -98,7 +114,8 @@
             <th class="fix_2">
 
             </th>
-            <th>
+            <th style="min-height: 520px">
+			  <br />
               <p class="P3">
                 My Github Stats
               </p>
@@ -106,23 +123,25 @@
               </p>
               <a href="https://github.com/ntut-xuan" target="_blank">
                 <img src="https://github-readme-stats.vercel.app/api?username=ntut-xuan&show_icons=true" />
+				<br />
+				<img src="http://github-readme-streak-stats.herokuapp.com?user=ntut-xuan&theme=calm" />
               </a>
             </th>
           </tr>
         </table>
-        <img src="hr.jpg">
+        <img src="img/hr.jpg" width="1500" height="31">
         <table>
           <tr>
-            <th valign="top">
+            <th style="min-width: 885px" valign="top">
+			  <br />
               <p class="p3"> Skill </p>
+			  <p class="p2"> C# Windows Forms development for 3 years </p>
               <p class="p2"> Java development for 5 years </p>
               <p class="p2"> Competitive programming (C++) for 3 years </p>
               <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ntut-xuan" />
             </th>
-            <th class="fix">
-
-            </th>
             <th valign="top">
+			  <br />
               <p class="p3"> Experience </p>
               <p class="p2"> 2020 - NTUT ICPC team member with David and Bill (NTUT-Kn1ght) </p>
               <img src="https://media.discordapp.net/attachments/874565875087327263/890872194090012712/unknown.png?width=895&height=671" height="276" weight="400" />
@@ -132,7 +151,7 @@
       </div>
       <div id="nav">
         <a href="http://bitly.com/98K8eH">
-          <img src="ame.gif" height="240" width="189" />
+          <img src="ame.gif" height="140" />
         </a>
       </div>
     </body>
