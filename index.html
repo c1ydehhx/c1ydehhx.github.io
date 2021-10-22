@@ -1,64 +1,73 @@
 <html>
-    <head>
-      <title>owob</title>
-      <style>
-          body{
-            background-image: url('https://media.discordapp.net/attachments/874565875087327263/890866713548173332/unknown.png?width=1191&height=671');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-          }
-          div.getleft{
-            position: relative;
-            left: 30px;
-          }
-          .p1 {
-            font-family: "Microsoft YaHei UI", Times, serif;
-            font-weight: bold;
-            font-size: 32px;
-          }
-          .p2 {
-            font-family: "Noto Sans TC", Times, serif;
-            font-weight: normal;
-            font-size: 18px;
-          }
-          .p3 {
-            font-family: "Microsoft YaHei UI", Times, serif;
-            font-weight: bold;
-            font-size: 28px;
-          }
-          table{
-            text-align: left;
-          }
-          th.fix {
-            vertical-align: text-top;
-            min-width:200px;
-            max-width:200px;
-          }
-          th.fix_2 {
-            min-width:200px;
-            max-width:200px
-          }
-		  th.fix_3 {
-            min-width:543px;
-            max-width:543px
-          }
-		  th.fix_4 {
-            min-width:35px;
-            max-width:35px
-          }
-		  th.about {
-			top: 5px
-		  }
-          #nav {
-            width: 141px;
-            height: 300px;
-            position:fixed;right:0;top:80%
-          }
-      </style>
-    </head>
+	<head>
+		<link rel="stylesheet" href="nav.css">
+		<title>owob</title>
+		<style>
+			body{
+				background-image: url('https://media.discordapp.net/attachments/874565875087327263/890866713548173332/unknown.png?width=1191&height=671');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+			}
+			div.getleft{
+				position: relative;
+				left: 30px;
+			}
+			.p1 {
+				font-family: "Microsoft YaHei UI", Times, serif;
+				font-weight: bold;
+				font-size: 32px;
+			}
+			.p2 {
+				font-family: "Noto Sans TC", Times, serif;
+				font-weight: normal;
+				font-size: 18px;
+			}
+			.p3 {
+				font-family: "Microsoft YaHei UI", Times, serif;
+				font-weight: bold;
+				font-size: 28px;
+			}
+			table{
+				text-align: left;	
+			}
+			th.fix {
+				vertical-align: text-top;
+				min-width:200px;
+				max-width:200px;
+			}
+			th.fix_2 {
+				min-width:200px;
+				max-width:200px
+			}
+			th.fix_3 {
+				min-width:543px;
+				max-width:543px
+			}
+				th.fix_4 {
+				min-width:35px;
+				max-width:35px
+			}
+			th.about {
+				top: 5px
+			}
+		</style>
+	</head>
     <body>
       <div class="getleft">
+		<nav>
+			<table>
+				<tr>
+					<th class="p3">
+						<a href="index.html">Home</a></li>
+					</th>
+					</th>
+					<th class="p3">
+						<a href="schedule.html">Schedule</a></li>
+					</th>
+				</tr>
+			</table>
+		</nav>	
         <br />
         <h1 class="p1">Hello, I'm Uriah.</h1>
 		<hr />
@@ -117,6 +126,13 @@
                   ntut-xuan
                 </a>
               </p>
+			  <dl class="p2">
+				<dt>Organization</dt>
+					<dd>
+						<img src="https://avatars.githubusercontent.com/u/43572053?s=200&v=4" width="128px" height="128px" />
+						<img src="https://oneappsgroup.com/wp-content/uploads/frontend/2016/12/taipei-tech.jpg" width="128px" height="128px" />
+					</dd>
+			  </dl>
             </th>
             <th class="fix_2">
 
@@ -141,7 +157,7 @@
           <tr>
             <th style="min-width: 885px" valign="top">
 			  <br />
-              <p class="p3"> Skill </p>
+              <p class="p3" id="skill"> Skill </p>
 			  <ul class = "p2">
 				<li> C# Windows Forms development for 3 years </li>
 				<li> Java development for 5 years </li>
@@ -152,17 +168,14 @@
             <th valign="top">
 			  <br />
               <p class="p3"> Experience </p>
-              <p class="p2"> 2020 - NTUT ICPC team member with David and Bill (NTUT-Kn1ght) </p>
+			  <ol class="p2">
+				  <li> 2019 - NHSSC Computer Software Design - Rank 6 </li>
+				  <li> 2020 - NTUT ICPC team member with David and Bill (NTUT-Kn1ght) </li>
+			  </ol>
               <img src="https://media.discordapp.net/attachments/874565875087327263/890872194090012712/unknown.png?width=895&height=671" height="276" weight="400" />
             </th>
           </tr>
         </table>
-      </div>
-      <div id="nav">
-		<del class="p2"> Don't click this </del>
-        <a href="http://bitly.com/98K8eH">
-          <img src="ame.gif" height="140" />
-        </a>
       </div>
     </body>
 </html>
