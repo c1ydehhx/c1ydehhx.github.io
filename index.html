@@ -8,7 +8,10 @@
         <meta content="https://ntut-xuan.github.io/" name="url" />
         <meta content="https://ntut-xuan.github.io/src/image/uriah.jpg" property="image" />
         <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+        <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
         <link href="./dist/output.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+
         <title> Uriah's Website </title>
     </head>
     <body class="">
@@ -88,6 +91,18 @@
         </div>
         <hr class="mt-10">
         <div class="my-10 flex justify-center">
+            <p class="text-3xl font-bold"> Github </p>
+        </div>
+        <div class="relative w-full flex justify-center h-fit bg-white z-50">
+            <a class="block h-full w-3/4 z-50" href="https://codeforces.com/profile/Cylinder" target="_blank">
+                <div class="calendar">
+                    <!-- Loading stuff -->
+                    Loading the data just for you.
+                </div>
+            </a>
+        </div>
+        <hr class="mt-10">
+        <div class="my-10 flex justify-center">
             <p class="text-3xl font-bold"> 專案開發 </p>
         </div>
         <div class="relative w-full my-5 h-fit flex-col justify-center">
@@ -96,14 +111,13 @@
                     <div class="w-full flex p-10 justify-start hover:bg-gray-100">
                         <div class="mr-10">
                             <div class="h-24">
-                                <div class="h-16 w-16 bg-gradient-to-r from-orange-200 to bg-red-500 rounded-full">
-                                    <p class=" text-3xl text-white text-center left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 relative"> UD </p>
+                                <div class="h-16 w-16 bg-gradient-to-r fr
+                                <div>
+                                    <p class="text-xl font-bold"> Codeforces Stat </p>
+                                    <p class="text-lg"> 透過爬蟲能夠單行嵌入 SVG 圖檔，能夠擷取使用者在 Codeforces 上的資料 </p>
                                 </div>
-                                <p class="mt-5 text-center"> 已發布 </p>
                             </div>
-                        </div>
-                        <div>
-                            <p class="text-xl font-bold"> Una DiscordBot </p>
+                        </a>rdBot </p>
                             <p class="text-lg"> 在 Discord 伺服器 Code Community 服務的機器人，供給使用者在 CodeForces 查詢比賽與個人資料 </p>
                         </div>
                     </div>
@@ -179,4 +193,9 @@
             <p> © 2022 Uriah Xuan </p>
         </div>
     <body>
+    <script>
+        GitHubCalendar(".calendar", "ntut-xuan");
+        // or enable responsive functionality
+        GitHubCalendar(".calendar", "ntut-xuan", { responsive: true });
+    </script>
 </html>
