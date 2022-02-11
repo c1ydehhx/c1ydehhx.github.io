@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.22 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -615,12 +615,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 70px;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .w-\[70\%\] {
   width: 70%;
 }
 
 .w-16 {
   width: 4rem;
+}
+
+.w-1\/4 {
+  width: 25%;
 }
 
 .-translate-y-1\/2 {
