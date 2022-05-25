@@ -1,9 +1,5 @@
 /*
-<<<<<<< HEAD
 ! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
-=======
-! tailwindcss v3.0.22 | MIT License | https://tailwindcss.com
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 */
 
 /*
@@ -561,7 +557,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
-<<<<<<< HEAD
 .sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -574,8 +569,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: -0.25rem;
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .left-32 {
   left: 8rem;
 }
@@ -651,14 +644,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.25rem;
 }
 
-<<<<<<< HEAD
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -809,7 +799,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 4rem;
 }
 
-<<<<<<< HEAD
 .h-\[calc\(100\%-theme\(\'spacing\.1\'\)\)\] {
   height: calc(100% - 0.25rem);
 }
@@ -818,8 +807,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: calc(100% - 0.25rem);
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .w-screen {
   width: 100vw;
 }
@@ -858,7 +845,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 4rem;
 }
 
-<<<<<<< HEAD
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -889,10 +875,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border-separate {
   border-collapse: separate;
-=======
-.w-1\/4 {
-  width: 25%;
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 }
 
 .-translate-y-1\/2 {
@@ -905,7 +887,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-<<<<<<< HEAD
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1197,18 +1178,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-auto-flow: column dense;
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -1339,11 +1310,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
 .justify-evenly {
   justify-content: space-evenly;
 }
 
-<<<<<<< HEAD
 .justify-items-start {
   justify-items: start;
 }
@@ -1360,13 +1338,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-items: stretch;
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .gap-10 {
   gap: 2.5rem;
 }
 
-<<<<<<< HEAD
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 1;
 }
@@ -1635,10 +1610,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .break-all {
   word-break: break-all;
-=======
-.scroll-smooth {
-  scroll-behavior: smooth;
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 }
 
 .rounded-\[10px\] {
@@ -1653,7 +1624,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 9999px;
 }
 
-<<<<<<< HEAD
 .rounded {
   border-radius: 0.25rem;
 }
@@ -1694,8 +1664,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-left-radius: 0.25rem;
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .border-2 {
   border-width: 2px;
 }
@@ -1789,17 +1757,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
-<<<<<<< HEAD
-.bg-\[rgb\(255\2c 0\2c 0\)\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-yellow-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
-}
-
 .bg-teal-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(20 184 166 / var(--tw-bg-opacity));
@@ -1810,15 +1767,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
+.bg-\[rgb\(255\2c 0\2c 0\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
 
 .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/2246476\/pexels-photo-2246476\.jpeg\?auto\=compress\&cs\=tinysrgb\&dpr\=2\&h\=750\&w\=1260\'\)\] {
   background-image: url('https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-<<<<<<< HEAD
 }
 
 .bg-gradient-to-r {
@@ -1839,12 +1798,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-\[url\(\"\.\.\.\"\)\2c url\(\"\.\.\.\"\)\] {
   background-image: url("..."),url("...");
-=======
-}
-
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 }
 
 .from-orange-200 {
@@ -1875,11 +1828,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .from-red-300 {
   --tw-gradient-from: #fca5a5;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(252 165 165 / 0));
-}
-
-.from-yellow-300 {
-  --tw-gradient-from: #fde047;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(253 224 71 / 0));
 }
 
 .from-teal-300 {
@@ -2041,13 +1989,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 2.5rem;
 }
 
-<<<<<<< HEAD
 .text-left {
   text-align: left;
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .text-center {
   text-align: center;
 }
@@ -2202,7 +2147,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-<<<<<<< HEAD
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -2386,15 +2330,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   mix-blend-mode: luminosity;
 }
 
-=======
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-<<<<<<< HEAD
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -2634,9 +2575,4 @@ Ensure the default browser behavior of the `hidden` attribute.
       paint-order: markers;
     }
   }
-=======
-.hover\:bg-gray-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
->>>>>>> 8e4b70b689f4ef7f3f54a7ae4e10e1888be093c9
 }
