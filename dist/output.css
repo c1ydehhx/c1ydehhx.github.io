@@ -816,6 +816,14 @@ video {
   background-image: url('https://images.pexels.com/photos/18693461/pexels-photo-18693461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 }
 
+.bg-\[url\(\'\.\/src\/image\/uriah3\.jpg\'\)\] {
+  background-image: url('./src/image/uriah3.jpg');
+}
+
+.bg-\[url\(\'\/src\/image\/uriah3\.jpg\'\)\] {
+  background-image: url('/src/image/uriah3.jpg');
+}
+
 .from-blue-300 {
   --tw-gradient-from: #93c5fd var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(147 197 253 / 0) var(--tw-gradient-to-position);
