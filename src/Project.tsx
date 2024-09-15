@@ -3,7 +3,6 @@ import Meta from "antd/es/card/Meta";
 import PolygonDust from "./assets/polygondust.png";
 import GiraffeAdventure from "./assets/giraffe-adventure.png";
 import { CheckCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
-import { redirect } from "react-router-dom";
 
 export default function Project() {
   return (
