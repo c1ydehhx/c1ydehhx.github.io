@@ -3,6 +3,7 @@ import Meta from "antd/es/card/Meta";
 import PolygonDust from "./assets/polygondust.png";
 import GiraffeAdventure from "./assets/giraffe-adventure.png";
 import { CheckCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
+import { redirect } from "react-router-dom";
 
 export default function Project() {
   return (
@@ -20,6 +21,9 @@ export default function Project() {
                 style={{ height: "360px" }}
               />
             }
+            onClick={() => {
+              window.open("https://github.com/ntut-xuan/PolygonDust", "_blank");
+            }}
           >
             <Meta
               title={<div>PolygonDust</div>}
@@ -48,6 +52,12 @@ export default function Project() {
                 style={{ height: "360px" }}
               />
             }
+            onClick={() => {
+              window.open(
+                "https://github.com/ntut-xuan/GiraffeEmojiAdventure",
+                "_blank"
+              );
+            }}
           >
             <Meta
               title={<div>GiraffeAdventure</div>}
