@@ -1,6 +1,7 @@
 import { Card, Tag } from "antd";
 import Meta from "antd/es/card/Meta";
 import PolygonDust from "./assets/polygondust.png";
+import TRA from "./assets/tra.png";
 import GiraffeAdventure from "./assets/giraffe-adventure.png";
 import { CheckCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 
@@ -31,6 +32,38 @@ export default function Project() {
                   <p>
                     PolygonDust is an application to measure the area size of
                     polygon.
+                  </p>
+                  <div>
+                    <Tag icon={<CheckCircleOutlined />} color="success">
+                      Maintaining
+                    </Tag>
+                  </div>
+                </div>
+              }
+            />
+          </Card>
+          <Card
+            className="hover:shadow-lg hover:duration-300 cursor-pointer w-full md:w-[50%]"
+            cover={
+              <img
+                alt="TRA"
+                src={TRA}
+                className="mx-auto object-scale-down"
+                style={{ height: "360px" }}
+              />
+            }
+            onClick={() => {
+              window.open("https://github.com/ntut-xuan/TRA", "_blank");
+            }}
+          >
+            <Meta
+              title={<div>TRA</div>}
+              description={
+                <div className="flex flex-col gap-3">
+                  <p>
+                    TRA (Traffic Realtime Analysis) is an application to fetch
+                    packet loss and queueing delay between two network
+                    interface.
                   </p>
                   <div>
                     <Tag icon={<CheckCircleOutlined />} color="success">
