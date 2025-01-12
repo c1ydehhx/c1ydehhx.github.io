@@ -57,7 +57,7 @@ export default function About() {
           direction="vertical"
           items={[
             {
-              title: "National Yang-Ming Chaio-Tong University",
+              title: "National Yang-Ming Chaio-Tung University",
               description: (
                 <div>
                   <p>Master (2024-now)</p>
