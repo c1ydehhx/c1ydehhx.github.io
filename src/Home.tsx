@@ -28,7 +28,7 @@ export default function Home() {
         <div className="border w-full md:w-[50vw] mx-auto my-5"></div>
       </div>
       <div className="w-100 flex gap-3 justify-center">
-        <a href="https://github.com/ntut-xuan">
+        <a href="https://github.com/c1ydehhx">
           <FontAwesomeIcon
             icon={faGithubSquare}
             className="w-16 h-12 md:h-16"
