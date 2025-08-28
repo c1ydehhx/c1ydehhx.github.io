@@ -19,7 +19,7 @@ export default function Home() {
           Graduated at National Taipei University of Technology.
         </p>
         <p className="text-xs text-center text-gray-500 md:text-center md:text-base">
-          Studying master program at National Yang-Ming Chiao-Tong University.
+          Studying master program at National Yang-Ming Chiao-Tung University.
         </p>
         <p className="text-xs text-center text-gray-500 md:text-center md:text-base">
           Interest in Networking, Cyber Securty (Sandbox and Malware) and
