@@ -12,7 +12,7 @@ export default function Home() {
     <div className="text-center">
       <Avatar className="w-48 h-48" src={UriahImage} size="large"></Avatar>
       <p className="py-3 font-bold text-2xl md:text-3xl">
-        Huang, (Clyde) Han-Xuan
+        Huang, Han-Xuan (黃漢軒)
       </p>
       <div className="flex gap-3 md:gap-0 flex-col">
         <p className="text-xs text-center text-gray-500 md:text-center md:text-base">

@@ -7,12 +7,12 @@ export default function Layout() {
     <div>
       <div className="flex flex-row w-[95%] md:w-[80%] mx-auto border-b">
         <div
-          className="w-[40%] md:w-fit h-full flex flex-col justify-center px-3"
+          className="w-[30%] md:w-fit h-full flex flex-col justify-center px-3"
           style={{ height: 70 }}
         >
           <a href="/#/">
             <p className="text-base text-center align-middle md:text-2xl font-bold text-nowrap">
-              Clyde's Webpage
+              c1ydehhx
             </p>
           </a>
         </div>

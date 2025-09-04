@@ -1,5 +1,5 @@
 export const aboutDescription: string = `
-    Hi, I'm Huang, Han-Xuan. From Tainan, Taiwan. You can call me Clyde.
+    Hi, I'm Huang, Han-Xuan (黃漢軒).  From Tainan, Taiwan. You can call me Clyde.
 
     I'm interest in networking and infrastructure and still proactive develop lot of interest.
 
