@@ -1,34 +1,12 @@
-import { GithubOutlined } from "@ant-design/icons";
 import { Calendar, Tag, Typography } from "antd";
-
-const { Link } = Typography;
-
-const dailys = [
-    {
-        date: "2025-09-17",
-        topic: "talk",
-        title: "How to: Continuous Integrate",
-        description: "I handle a talk to describe how to do Continuous Integrate. You may interest in this topic."
-    },
-    {
-        date: "2025-09-17",
-        topic: "dev",
-        title: "Migrate hypatia with Ubuntu 24.04 and ns3-3.45",
-        description: <div className="flex flex-col gap-3">
-            <div>
-                <p>I migrate hypatia with Ubuntu 24.04 and ns3-3.45. It resolve pointer class migration and outdated dependency issue. I create two fork project.</p>
-                <p>For more information, please refer: </p>
-            </div>
-            <div className="flex flex-col gap-1">
-                <Link href="https://github.com/c1ydehhx/hypatia"><GithubOutlined /> c1ydehhx/hypatia</Link>
-                <Link href="https://github.com/c1ydehhx/basic-sim"><GithubOutlined /> c1ydehhx/basic-sim</Link>
-                <Link href="https://github.com/snkas/hypatia/pull/39"><GithubOutlined /> snkas/hypatia PR#39 </Link>
-            </div>
-        </div>
-    }
-]
+import type { CellRenderInfo } from 'rc-picker/lib/interface';
+import dayjs from "dayjs";
+import { useState } from "react";
+import dailyData from "./daily/daily";
 
 export const DevDaily = () => {
+    const [dailys, setDailys] = useState(dailyData);
+
     const bgColor = (topic: string) => {
         if(topic == "dev"){
             return "bg-blue-100"
@@ -43,12 +21,22 @@ export const DevDaily = () => {
             return "#F57C00"
         }
     }
+
+    const cellRender = (date: dayjs.Dayjs, _info: CellRenderInfo<dayjs.Dayjs>) => {
+        if(dailyData.map(daily => daily.date).filter(dailyDate => dailyDate == date.format("YYYY-MM-DD")).length > 0){
+            return <div className="w-[5px] h-[5px] rounded-full bg-blue-500 mx-auto mt-1"></div>
+        }else{
+            return <div className="w-[5px] h-[5px] rounded-full bg-white mx-auto mt-1"></div>
+        }
+    }
     return (
         <div className="w-full">
             <h1 className="text-center text-2xl font-bold py-3">Dev Daily</h1>
             <div className="flex h-[75vh] w-full flex-col gap-3">
                 <div className="h-full w-full p-3 md:w-[75%] mx-auto border border-gray-300 rounded shadow">
-                    <Calendar fullscreen={false}></Calendar>
+                    <Calendar fullscreen={false} cellRender={cellRender} onSelect={(date, _info) => {
+                        setDailys(dailyData.filter(daily => daily.date == date.format("YYYY-MM-DD")))
+                    }}></Calendar>
                 </div>
                 <div className="h-full w-full md:w-[75%] flex flex-col gap-3 mx-auto overflow-y-auto">
                     { 
