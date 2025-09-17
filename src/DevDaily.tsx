@@ -9,9 +9,9 @@ export const DevDaily = () => {
 
     const bgColor = (topic: string) => {
         if(topic == "dev"){
-            return "bg-blue-100"
+            return "bg-blue-50"
         }else if(topic == "talk"){
-            return "bg-orange-100"
+            return "bg-orange-50"
         }
     }
     const tagColor = (topic: string) => {
@@ -48,7 +48,7 @@ export const DevDaily = () => {
                     { 
                         dailys.map(daily => {
                             return (
-                                <div className={`p-3 border border-gray-300 rounded shadow flex flex-col gap-3 ${bgColor(daily.topic)}`}>
+                                <div className={`p-3 border border-gray-300 rounded shadow flex flex-col gap-3 ${bgColor(daily.topic)} hover:shadow-lg transition-all duration-500`}>
                                     <div>
                                         <h4 className="font-bold">{dailyEmoji(daily.topic)} {daily.title}</h4>
                                         <Tag color={tagColor(daily.topic)}>{daily.topic}</Tag>
