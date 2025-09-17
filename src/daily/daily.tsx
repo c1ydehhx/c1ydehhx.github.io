@@ -1,9 +1,20 @@
-import { GithubOutlined } from "@ant-design/icons";
+import { GithubOutlined, LinkOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
 
 const { Link } = Typography;
 
 export const dailyData = [
+    {
+        date: "2025-09-17",
+        topic: "dev",
+        title: "Create Dev Daily page on my webiste",
+        description: <div>
+            <p>It will be a good place to share what I do. For more information, please refer:</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://c1ydeh.net/#/devdaily"><LinkOutlined /> Clyde's Page / Dev Daily </Link>
+            </div>
+        </div>
+    },
     {
         date: "2025-09-17",
         topic: "talk",
