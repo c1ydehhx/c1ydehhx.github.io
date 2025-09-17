@@ -46,7 +46,6 @@ export default function Layout() {
         </div>
       </div>
       <div className="p-5">
-        <div className="flex justify-center py-5"></div>
         <div>
           <Outlet />
         </div>

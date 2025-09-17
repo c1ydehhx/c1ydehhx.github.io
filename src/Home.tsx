@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="text-center">
+    <div className="text-center py-[5rem]">
       <Avatar className="w-full" size={160} src={UriahImage}></Avatar>
       <p className="py-3 font-bold text-2xl md:text-3xl">
         Huang, Han-Xuan (黃漢軒)
