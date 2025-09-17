@@ -9,14 +9,14 @@ export const DevDaily = () => {
 
     const bgColor = (topic: string) => {
         if(topic == "dev"){
-            return "bg-blue-50"
+            return "bg-pink-50"
         }else if(topic == "talk"){
             return "bg-orange-50"
         }
     }
     const tagColor = (topic: string) => {
         if(topic == "dev"){
-            return "#1976D2"
+            return "#F44336"
         }else if(topic == "talk"){
             return "#F57C00"
         }
