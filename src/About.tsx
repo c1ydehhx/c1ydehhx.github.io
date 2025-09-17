@@ -37,7 +37,7 @@ export default function About() {
         <p className="text-2xl font-bold">About</p>
         <div className="flex flex-col md:flex-row gap-5">
           <div>
-            <Image className="border" src={UriahLife}></Image>
+            <Image className="border border-gray-300" src={UriahLife}></Image>
           </div>
           <div className="flex flex-col gap-3 text-sm md:text-base">
             {aboutDescription.split("\n").map((line, idx) => (

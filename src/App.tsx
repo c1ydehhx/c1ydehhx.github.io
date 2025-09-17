@@ -1,4 +1,3 @@
-import "./output.css";
 import "./custom.css";
 import {
   createHashRouter,
@@ -11,6 +10,7 @@ import Layout from "./Outlet";
 import Home from "./Home";
 import About from "./About";
 import Project from "./Project";
+import DevDaily from "./DevDaily";
 
 const router = createHashRouter(
   createRoutesFromElements(
@@ -18,6 +18,7 @@ const router = createHashRouter(
       <Route path="/" element={<Home />} />
       <Route path="/About" element={<About />} />
       <Route path="/Project" element={<Project />} />
+      <Route path="/DevDaily" element={<DevDaily />} />
     </Route>
   )
 );

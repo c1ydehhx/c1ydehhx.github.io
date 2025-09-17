@@ -5,9 +5,9 @@ export default function Layout() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="flex flex-row w-[95%] md:w-[80%] mx-auto border-b">
+      <div className="flex flex-row w-[100%] md:w-[80%] mx-auto border-b border-gray-300">
         <div
-          className="w-[30%] md:w-fit h-full flex flex-col justify-center px-3"
+          className="w-[30%] md:w-fit h-full flex flex-col justify-center px-5"
           style={{ height: 70 }}
         >
           <a href="/#/">
@@ -16,7 +16,7 @@ export default function Layout() {
             </p>
           </a>
         </div>
-        <div className="w-[60%]">
+        <div className="w-[70%]">
           <Tabs
             className="w-full px-5"
             tabPosition="top"
@@ -29,6 +29,10 @@ export default function Layout() {
               {
                 label: "About",
                 key: "about",
+              },
+              {
+                label: "Dev Daily",
+                key: "devdaily",
               },
               {
                 label: "Project",

@@ -10,7 +10,7 @@ import {
 export default function Home() {
   return (
     <div className="text-center">
-      <Avatar className="w-48 h-48" src={UriahImage} size="large"></Avatar>
+      <Avatar className="w-full" size={160} src={UriahImage}></Avatar>
       <p className="py-3 font-bold text-2xl md:text-3xl">
         Huang, Han-Xuan (黃漢軒)
       </p>
@@ -25,20 +25,20 @@ export default function Home() {
           Interest in Networking, Cyber Securty (Sandbox and Malware) and
           Network Security.
         </p>
-        <div className="border w-full md:w-[50vw] mx-auto my-5"></div>
+        <div className="border border-gray-300 w-full md:w-[50vw] mx-auto my-5"></div>
       </div>
-      <div className="w-100 flex gap-3 justify-center">
+      <div className="w-full flex gap-5 justify-center">
         <a href="https://github.com/c1ydehhx">
           <FontAwesomeIcon
             icon={faGithubSquare}
-            className="w-16 h-12 md:h-16"
+            fontSize="4rem"
           />
         </a>
         <a href="https://www.linkedin.com/in/han-xuan-huang-3b50b4238/">
-          <FontAwesomeIcon icon={faLinkedin} className="w-16 h-12 md:h-16" />
+          <FontAwesomeIcon icon={faLinkedin} fontSize="4rem" />
         </a>
         <a href="https://discord.gg/Xg3aZPssEy">
-          <FontAwesomeIcon icon={faDiscord} className="w-16 h-12 md:h-16" />
+          <FontAwesomeIcon icon={faDiscord} fontSize="4rem" />
         </a>
       </div>
     </div>
