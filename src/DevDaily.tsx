@@ -21,7 +21,13 @@ export const DevDaily = () => {
             return "#F57C00"
         }
     }
-
+    const dailyEmoji = (topic: string) => {
+        if(topic == "dev"){
+            return "🔨"
+        }else{
+            return "💬"
+        }
+    }
     const cellRender = (date: dayjs.Dayjs, _info: CellRenderInfo<dayjs.Dayjs>) => {
         if(dailyData.map(daily => daily.date).filter(dailyDate => dailyDate == date.format("YYYY-MM-DD")).length > 0){
             return <div className="w-[5px] h-[5px] rounded-full bg-blue-500 mx-auto mt-1"></div>
@@ -44,7 +50,7 @@ export const DevDaily = () => {
                             return (
                                 <div className={`p-3 border border-gray-300 rounded shadow flex flex-col gap-3 ${bgColor(daily.topic)}`}>
                                     <div>
-                                        <h4>{daily.title}</h4>
+                                        <h4 className="font-bold">{dailyEmoji(daily.topic)} {daily.title}</h4>
                                         <Tag color={tagColor(daily.topic)}>{daily.topic}</Tag>
                                         <Tag color="#888888">{daily.date}</Tag>
                                     </div>
