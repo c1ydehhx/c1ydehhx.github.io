@@ -5,6 +5,17 @@ const { Link } = Typography;
 
 export const dailyData = [
     {
+        date: "2025-09-18",
+        topic: "dev",
+        title: "Remove print_statistic function in modmesh",
+        description: <div>
+            <p>I remove print_statistic function in modmesh for preparing remove TimeRegistry class.</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://github.com/solvcon/modmesh/pull/583"><GithubOutlined /> solvcon/modmesh PR #583</Link>
+            </div>
+        </div>
+    },
+    {
         date: "2025-09-17",
         topic: "dev",
         title: "Create Dev Daily page on my webiste",
