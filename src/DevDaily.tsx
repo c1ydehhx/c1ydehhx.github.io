@@ -37,7 +37,7 @@ export const DevDaily = () => {
     }
     return (
         <div className="w-full">
-            <h1 className="text-center text-2xl font-bold py-3">Dev Daily</h1>
+            <h1 className="text-center text-2xl font-bold pb-5">Dev Daily</h1>
             <div className="flex h-[80vh] w-full flex-col gap-3">
                 <div className="h-full w-full md:w-[75%] mx-auto border border-gray-300 rounded shadow">
                     <Calendar fullscreen={false} cellRender={cellRender} onSelect={(date, _info) => {
