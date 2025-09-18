@@ -7,6 +7,18 @@ export const dailyData = [
     {
         date: "2025-09-18",
         topic: "dev",
+        title: "Find a webui bugs on Free5GC and report with issue",
+        description: <div>
+            <p>I just find out a issue when two both of UE have empty GPSI, the update will show duplicate gpsi alert, which is abnormal.</p>
+            <p>I will fix it in my free time :D</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://github.com/free5gc/free5gc/issues/718"><GithubOutlined /> free5gc/free5gc Issue #718</Link>
+            </div>
+        </div>
+    },
+    {
+        date: "2025-09-18",
+        topic: "dev",
         title: "Remove print_statistic function in modmesh",
         description: <div>
             <p>I remove print_statistic function in modmesh for preparing remove TimeRegistry class.</p>
