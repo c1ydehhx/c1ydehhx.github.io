@@ -10,9 +10,10 @@ export const dailyData = [
         title: "Find a webui bugs on Free5GC and report with issue",
         description: <div>
             <p>I just find out a issue when two both of UE have empty GPSI, the update will show duplicate gpsi alert, which is abnormal.</p>
-            <p>I will fix it in my free time :D</p>
+            <p>Fix it to skip the verification of empty GPSI, and check 3 situation work properly.</p>
             <div className="flex flex-col gap-1">
                 <Link href="https://github.com/free5gc/free5gc/issues/718"><GithubOutlined /> free5gc/free5gc Issue #718</Link>
+                <Link href="https://github.com/free5gc/webconsole/pull/167"><GithubOutlined /> free5gc/webconole Pull #167</Link>
             </div>
         </div>
     },
