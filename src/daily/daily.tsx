@@ -5,9 +5,15 @@ const { Link } = Typography;
 
 export const dailyData = [
     {
+        date: "2025-09-24",
+        topic: "talk",
+        title: "How to: Test your code",
+        description: "I handle a talk to describe how to do tests. You may interest in this topic."
+    },
+    {
         date: "2025-09-18",
         topic: "dev",
-        title: "Find a webui bugs on Free5GC and report with issue",
+        title: "Find and fix a webui bugs on Free5GC and report with issue",
         description: <div>
             <p>I just find out a issue when two both of UE have empty GPSI, the update will show duplicate gpsi alert, which is abnormal.</p>
             <p>Fix it to skip the verification of empty GPSI, and check 3 situation work properly.</p>
