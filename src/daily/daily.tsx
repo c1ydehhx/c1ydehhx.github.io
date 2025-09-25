@@ -5,6 +5,18 @@ const { Link } = Typography;
 
 export const dailyData = [
     {
+        date: "2025-09-26",
+        topic: "dev",
+        title: "Create a issue: 'DNN configuration in webui with the static IP not in DNN static IP CIDR pool should not update successful.' in free5gc",
+        description: <div>
+            <p>When solving free5gcCTF, I just found that we can assign any static IP and update successful in webconsole.</p>
+            <p>The issue should be consider to prevent insufficient resources.</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://github.com/free5gc/free5gc/issues/720"><GithubOutlined /> free5gc/free5gc Issue #720</Link>
+            </div>
+        </div>
+    },
+    {
         date: "2025-09-24",
         topic: "talk",
         title: "How to: Test your code",
