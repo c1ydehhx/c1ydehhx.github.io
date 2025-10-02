@@ -5,6 +5,17 @@ const { Link } = Typography;
 
 export const dailyData = [
     {
+        date: "2025-10-02",
+        topic: "dev",
+        title: "Create a pull request #777 on UERANSIM",
+        description: <div>
+            <p>Fix missing header to let UERANSIM compile successfully.</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://github.com/aligungr/UERANSIM/pull/777"><GithubOutlined /> aligungr/UERANSIM PR #777</Link>
+            </div>
+        </div>
+    },
+    {
         date: "2025-09-26",
         topic: "dev",
         title: "Create a issue: 'DNN configuration in webui with the static IP not in DNN static IP CIDR pool should not update successful.' in free5gc",
