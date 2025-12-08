@@ -11,7 +11,7 @@ export const dailyData = [
         description: <div>
             <p>Application Build failed on ubuntu 24.04 and macos</p>
             <div className="flex flex-col gap-1">
-                <Link href="https://github.com/solvcon/devenv/issues/180"><GithubOutlined /> solvcon/devenv PR #180</Link>
+                <Link href="https://github.com/solvcon/devenv/issues/180"><GithubOutlined /> solvcon/devenv issue #180</Link>
             </div>
         </div>
     },
