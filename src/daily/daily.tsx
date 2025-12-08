@@ -5,6 +5,28 @@ const { Link } = Typography;
 
 export const dailyData = [
     {
+        date: "2025-12-08",
+        topic: "dev",
+        title: "Create a issue #180 on devenv",
+        description: <div>
+            <p>Application Build failed on ubuntu 24.04 and macos</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://github.com/solvcon/devenv/issues/180"><GithubOutlined /> solvcon/devenv PR #180</Link>
+            </div>
+        </div>
+    },
+    {
+        date: "2025-10-18",
+        topic: "dev",
+        title: "Create a pull request #600 on modmesh",
+        description: <div>
+            <p>Remove TimeRegistry related class and test</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://github.com/solvcon/modmesh/pull/600"><GithubOutlined /> solvcon/modmesh PR #600</Link>
+            </div>
+        </div>
+    },
+    {
         date: "2025-10-02",
         topic: "dev",
         title: "Create a pull request #777 on UERANSIM",
