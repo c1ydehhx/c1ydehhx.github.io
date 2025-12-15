@@ -16,6 +16,18 @@ export const dailyData = [
         </div>
     },
     {
+        date: "2025-12-13",
+        topic: "talk",
+        title: "Talk: Efficient and Hardware-Independent Deep Packet Inspection for Free5GC",
+        description: <div>
+            <p>'Efficient and Hardware-Independent Deep Packet Inspection for Free5GC' is the research project that started in 2025 fall. We aims to develop an efficient and hardward-independent DPI for Free5GC. We discuss the affect on link throughput and packet blocking rate when having this machanism. Based on our expremental result, XDP method can have the same link throughtput and packet blocking rate compared with P4 assist method. It prove that we achieve a hardware-independent DPI solution that efficient as hardware-support solution.</p>
+            <p>It's interesting in get to know how to apply XDP into real network system like 5G Core, and share these work to the attendee in sciwork conference.</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://conf.sciwork.dev/program"><LinkOutlined /> Link: homepage of sciwork conference</Link>
+            </div>
+        </div>
+    },
+    {
         date: "2025-12-08",
         topic: "dev",
         title: "Create a issue #180 on devenv",
