@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 
 import Free5GCDPI from "./blog/2025f-free5gc-dpi/content.mdx"
-import { Breadcrumb, Button } from "antd";
+import { Breadcrumb } from "antd";
 
 export const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) =>

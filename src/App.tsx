@@ -13,7 +13,6 @@ import Project from "./Project";
 import DevDaily from "./DevDaily";
 import Blog from "./Blog";
 import { BlogContent } from "./BlogContent";
-import { MDXProvider } from "@mdx-js/react";
 
 const router = createHashRouter(
   createRoutesFromElements(
