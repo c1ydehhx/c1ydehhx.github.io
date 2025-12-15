@@ -5,6 +5,17 @@ const { Link } = Typography;
 
 export const dailyData = [
     {
+        date: "2025-12-15",
+        topic: "dev",
+        title: "Create a pull request #264 on solvcon",
+        description: <div>
+            <p>Fix missing shared object issue</p>
+            <div className="flex flex-col gap-1">
+                <Link href="https://github.com/solvcon/solvcon/pull/264"><GithubOutlined /> solvcon/solvcon PR #264</Link>
+            </div>
+        </div>
+    },
+    {
         date: "2025-12-08",
         topic: "dev",
         title: "Create a issue #180 on devenv",
