@@ -60,13 +60,11 @@ It'll damage the link throughtput since our system can not handle the packet wit
 A good approach to solve this issue is, we may isolate the interest packet out of main datapath, to decrease the latency affect on the packet in main datapath. 
 It looks like:
 
-<div class="mx-auto">
 ```
 Packet -------> Main Datapath --------------------------------------|-> DN
 DNS Packet ---> Main Datapath                                       |
                      |---------> DNS Datapath ---> Packet Filter -->|
 ```
-</div>
 
 The latency caused by Packet filter only caused on DNS packet. It should be imporve the link throughput that not affect by the DPI mechanism.
 
