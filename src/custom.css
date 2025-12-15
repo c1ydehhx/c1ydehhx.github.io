@@ -7,3 +7,13 @@
 .ant-tabs-nav {
   margin: 0 !important;
 }
+
+ul {
+  list-style-type: disc;   /* default bullet */
+  list-style-position: inside; /* or outside */
+  padding-left: 1.25rem;   /* required if position is outside */
+}
+
+li {
+  display: list-item;      /* important if overridden elsewhere */
+}

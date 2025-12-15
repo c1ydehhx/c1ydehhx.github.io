@@ -38,6 +38,10 @@ export default function Layout() {
                 label: "Project",
                 key: "project",
               },
+              {
+                label: "Blog",
+                key: "blog",
+              },
             ]}
             onTabClick={(key: string) => {
               navigate(`/${key}`);
