@@ -12,9 +12,8 @@ export const Blog = () => {
                         <div onClick={() => navigate("2025f-deep-dive-setup-py")}>
                             <div className="mb-5">
                                 <h3 className="font-bold">Solve solvcon CI issue by deep dive <span className="font-mono">setup.py</span> in modmesh</h3>
-                                <Tag>2025-12-18</Tag>
+                                <Tag>2025-12-17</Tag>
                                 <Tag color="red">Development</Tag>
-                                <Tag color="black">Under construct</Tag>
                             </div>
                             <div className="text-sm flex flex-col gap-2">
                                 <p>This is the technical article to record the step of issue solving on solvcon/solvcon GitHub Actions. Due to lack of shared object of packaging, it's necessary to clearify the problem first, then trying to find a good practice to solve the issue.</p>
