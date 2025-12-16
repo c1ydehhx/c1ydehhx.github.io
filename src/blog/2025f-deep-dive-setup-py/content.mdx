@@ -26,13 +26,13 @@ It test our package work properly. But our CI seems failed in the last step.
 
 In solvcon, it test the package with this command in `dist/` folder:
 
-```
+```sh
 env PYTHONPATH=/home/runner/work/devenv/devenv/flavors/prime/application-solvcon/solvcon /home/runner/work/devenv/devenv/flavors/prime/usr/bin/python3 -m nose --with-doctest
 ```
 
 After take a look about the error message, it seems that we are lack of module when running solvcon test. It missing `_algorithm` from `solvcon.percal.vewave` and `solvcon.percal.linear`.
 
-```
+```sh
 ======================================================================
 ERROR: test_init (solvcon.parcel.gas.tests.test_solver.TestGasSolver)
 ----------------------------------------------------------------------
@@ -66,7 +66,7 @@ But it'll failed because under `dist/solvcon/parcel/` folder, it's not exists `_
 
 After take a look with command `find <project_root> -name="_algorithm*.so"`, I found that:
 
-```
+```sh
 ../../../prime/usr/lib/python3.8/site-packages/solvcon/parcel/vewave/_algorithm.cpython-38-x86_64-linux-gnu.so
 ../../../prime/usr/lib/python3.8/site-packages/solvcon/parcel/linear/_algorithm.cpython-38-x86_64-linux-gnu.so
 ```
@@ -82,14 +82,14 @@ It will conflict when we trying to import module in site-packaging, and **actual
 
 That is, we expected:
 
-```
+```python
 # Access from site-packages/solvcon/parcel/vewave/_algorithm.cpython-38-x86_64-linux-gnu.so
 from solvcon.parcel.vewave import _algorithm 
 ```
 
 But actually:
 
-```
+```python
 # Access from dist/solvcon/parcel/vewave/__init__.py, missing!
 from solvcon.parcel.vewave import _algorithm 
 ```
@@ -109,7 +109,7 @@ So I asked @yungyuc this question, he suggest me to take a look how modmesh work
 
 In modmesh, it build shared object in `modmesh/` folder then copy it to project root directory. That is:
 
-```
+```cmake
 add_custom_target(_modmesh_py
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:_modmesh> ${MODMESH_PY_DIR}/../_modmesh${PYEXTSUFFIX}
     DEPENDS _modmesh)

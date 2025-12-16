@@ -60,7 +60,7 @@ It'll damage the link throughtput since our system can not handle the packet wit
 A good approach to solve this issue is, we may isolate the interest packet out of main datapath, to decrease the latency affect on the packet in main datapath. 
 It looks like:
 
-```
+```sh
 Packet -------> Main Datapath --------------------------------------|-> DN
 DNS Packet ---> Main Datapath                                       |
                      |---------> DNS Datapath ---> Packet Filter -->|
@@ -203,7 +203,7 @@ It make our project more challenge since the domain comparison not sutible using
 
 To achieve this, I found that we can use Trie data structure to improve the query time on dataset. It inspire with JSON implementation that can efficient find the key by path.
 
-```
+```sh
 com |
     | ---- xiaohongshu
     | ---- c1ydeh

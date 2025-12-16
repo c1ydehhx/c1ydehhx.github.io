@@ -1,4 +1,5 @@
 import "./custom.css";
+import "./prism-vsc-dark-plus.css"
 import {
   createHashRouter,
   createRoutesFromElements,
