@@ -5,7 +5,7 @@ export default function Layout() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="flex flex-row w-[100%] md:w-[80%] mx-auto border-b border-gray-300">
+      <div className="flex flex-row w-[100%] md:w-[80%] pr-5 md:pr-0 mx-auto border-b border-gray-300">
         <div
           className="w-[30%] md:w-fit h-full flex flex-col justify-center px-5"
           style={{ height: 70 }}
