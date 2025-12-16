@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 
 import Free5GCDPI from "./blog/2025f-free5gc-dpi/content.mdx"
+import DeepDiveSetupPy from "./blog/2025f-deep-dive-setup-py/content.mdx"
 import { Breadcrumb } from "antd";
 
 export const mdxComponents = {
@@ -21,7 +22,8 @@ export const BlogContent = () => {
     const { slug } = useParams()
 
     const posts: Record<string, React.ReactNode> = {
-        "2025f-free5gc-dpi": <Free5GCDPI components={mdxComponents}></Free5GCDPI>
+        "2025f-free5gc-dpi": <Free5GCDPI components={mdxComponents}></Free5GCDPI>,
+        "2025f-deep-dive-setup-py": <DeepDiveSetupPy components={mdxComponents}></DeepDiveSetupPy>
     }
 
     const [Post, setPost] = useState<React.ReactNode | null>(null);

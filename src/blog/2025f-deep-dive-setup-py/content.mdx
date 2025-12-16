@@ -1,0 +1,182 @@
+import Cover from "../../assets/blog/2025f-deep-dive-setup-py/cover.png"
+
+# Solve solvcon CI issue by deep dive `setup.py` in modmesh
+
+<div>
+    <img class="mx-auto md:w-[75%]" src={Cover}/>
+    <p class="text-center text-xs text-gray-500">CI is broken</p>
+</div>
+
+This is a technical article to descirbe the CI issue caused by lack of shared object when doing packaging test. 
+I would like to clearify the issue first, and discuss about the pro and con with different method. In the end, I would like to present what method we actually take.
+It's an explore-driven technical article and step-by-step to deep dive `setup.py` to solve the issue.
+
+## Package test
+
+In solvcon, it do packaging test with these step:
+
+ - Clean up `*.so`.
+ - Hard-link all source files from `src/` to `dist/` folder.
+ - Run test with [nose](https://pypi.org/project/nose/) test framework.
+
+It test our package work properly. But our CI seems failed in the last step. 
+
+## What's the problem?
+
+In solvcon, it test the package with this command in `dist/` folder:
+
+```
+env PYTHONPATH=/home/runner/work/devenv/devenv/flavors/prime/application-solvcon/solvcon /home/runner/work/devenv/devenv/flavors/prime/usr/bin/python3 -m nose --with-doctest
+```
+
+After take a look about the error message, it seems that we are lack of module when running solvcon test. It missing `_algorithm` from `solvcon.percal.vewave` and `solvcon.percal.linear`.
+
+```
+======================================================================
+ERROR: test_init (solvcon.parcel.gas.tests.test_solver.TestGasSolver)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/devenv/devenv/flavors/prime/src/solvcon-master/dist/SOLVCON-0.1.4.dev0/solvcon/parcel/gas/tests/test_solver.py", line 12, in test_init
+    svr = solver.GasSolver(blk)
+  File "/home/runner/work/devenv/devenv/flavors/prime/src/solvcon-master/dist/SOLVCON-0.1.4.dev0/solvcon/parcel/gas/solver.py", line 112, in __init__
+    alg = _algorithm.GasAlgorithm()
+NameError: name '_algorithm' is not defined
+```
+
+## Missing `_algorithm` module?
+
+It's quite straight-forward to solve this issue by import the `_algorithm` module into code. Just like:
+
+```diff
++   from solvcon.parcel.linear import _algorithm
+    alg = _algorithm.LinearAlgorithm()
+```
+
+and
+
+```diff 
++   from solvcon.parcel.vewave import _algorithm
+    alg = _algorithm.VewaveAlgorithm()
+```
+
+But it'll failed because under `dist/solvcon/parcel/` folder, it's not exists `_algorith` shared object.
+
+### Where is our shared object?
+
+After take a look with command `find <project_root> -name="_algorithm*.so"`, I found that:
+
+```
+../../../prime/usr/lib/python3.8/site-packages/solvcon/parcel/vewave/_algorithm.cpython-38-x86_64-linux-gnu.so
+../../../prime/usr/lib/python3.8/site-packages/solvcon/parcel/linear/_algorithm.cpython-38-x86_64-linux-gnu.so
+```
+
+Our `_algorithm` shared object **only** exists in site-packages and source code. It seems that already been installed into our python environment.
+
+In this situation, the `_algorithm` should be access with `from solvcon.parcel.vewave import _algorithm`, right?
+
+### What actually happen when you import the package?
+
+Since in `dist/solvcon/parcel/vewave`, it exists `__init__.py` to declare `solvcon.parcel.vewave` as module. 
+It will conflict when we trying to import module in site-packaging, and **actually, the `__init__.py` will be access instead of site-packages, and caused `_algorithm` module missing**.
+
+That is, we expected:
+
+```
+# Access from site-packages/solvcon/parcel/vewave/_algorithm.cpython-38-x86_64-linux-gnu.so
+from solvcon.parcel.vewave import _algorithm 
+```
+
+But actually:
+
+```
+# Access from dist/solvcon/parcel/vewave/__init__.py, missing!
+from solvcon.parcel.vewave import _algorithm 
+```
+
+### (Three Bad) Methodological Disagreement
+
+Now we would like to fix this issue. I bring three different (and terrible) methodology.
+
+1. Copy package to specific path in dist package from site-packages.
+2. Build package to specific path in dist package.
+3. Trying force using site-package shared object in code. 
+
+Both method quite strange to me. It caught my interest to know what is "standard solution" to solve this issue. 
+So I asked @yungyuc this question, he suggest me to take a look how modmesh work.
+
+### How modmesh handle shared object?
+
+In modmesh, it build shared object in `modmesh/` folder then copy it to project root directory. That is:
+
+```
+add_custom_target(_modmesh_py
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:_modmesh> ${MODMESH_PY_DIR}/../_modmesh${PYEXTSUFFIX}
+    DEPENDS _modmesh)
+```
+
+And run the test with modmesh package with this shared object without install it.
+
+With this perspetive, it indicate that we must have shared object file in both `dist/solvcon/parcel/vewave/` and `dist/solvcon/parcel/linear` directory. 
+So, the method 3 should not be taken. Moreover, it doesn't copy shared object from site-packages, so method 2 should not be taken.
+
+### How modmesh generate shared object?
+
+It use `setup.py` ext_modules to build shared object in `modmesh/` directory. It's not directly generate shared object file into `dist/` folder, the first method should not be taken.
+It's important that we get to know about where the shared object been generated with target `buildext` to trigger `setup.py build_ext` or just trigger the build function in `setup.py`.
+
+Now, we can start to fix the issue in solvcon.
+
+## Solve the issue in solvcon
+
+### Regenerate missing shared object files
+
+The step should be
+
+ - Clean up `*.so`. (`setup.py clean`)
+ - Hard-link all source files from `src/` to `dist/` folder. (`setup.py sdist`)
+ - Run test with [nose](https://pypi.org/project/nose/) test framework.
+
+The shared object has been remove by the first step. So we lost all shared object when doing package test.
+Since we know the shared object is been generated from `setup.py` by the observation in modmesh, it can be regenerate with `setup.py build_ext` command.
+
+We can insert a step to regenerate shared object files:
+
+ - Clean up `*.so`. (`setup.py clean`)
+ - Build shared object on specific paths (`setup.py build_ext`)
+ - Hard-link all source files from `src/` to `dist/` folder. (`setup.py sdist`)
+ - Run test with [nose](https://pypi.org/project/nose/) test framework.
+
+### Copy these files to directory
+
+For the third step, it will hard-link all source files from `src/` to `dist/` folder, it should be determine "what files should be copy into `dist/`" in somewhere.
+
+So, I take a look about the description in `sdist` and find [this article](https://web.archive.org/web/20200227202149/https://zetcode.com/articles/packageinpython/).
+
+> `MANIFEST.in` in the same directory as that of `setup.py` for the MANIFEST file, where you indicate to sdist which files to include.
+
+It's surprisly for me to realize that `MANIFEST.in` define which files should be included. We can simply add `recursive-include *.so` in `MANIFEST.in` to include these shared object in packages.
+
+```diff
+recursive-include solvcon *.h
+recursive-include solvcon *.c
+recursive-include solvcon *.c_body
++ recursive-include solvcon *.so
++ recursive-include solvcon/parcel *.so
+recursive-include test *
+include ftests/*/*.py
+include examples/*/*/go
+```
+
+Finally, we fix the issue by not taken any method I purpose in previous. 
+It seems a standard solution to include your file into package with `setup.py sdist`. Easy, beautiful and stright forward.
+
+## Epilogue
+
+I'm glad to solve this issue by realize how `setup.py` work. 
+Actually, I'm not really familiar with setup toolchain like `setup.py`. It seems a good chance to realize it by solve this issue.
+
+By solving this question, I think I have more energy to solve more issue. Everytime I stuck in an issue, I learn that "why I stuck in it" with ask the mentor (@yungyuc) and got the instruct to know how to fix this issue.
+It's the major task I working in the sprint phase in sciwork conference. Now I'm ready to solve next issue to make me improved.
+
+"沒有什麼 issue 難得倒我了！" 
+-- c1ydeh
