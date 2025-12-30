@@ -2,8 +2,8 @@ import BlogContentClient from "./components/blog-content-client";
 
 export async function generateStaticParams() {
   return [
-    { slug: 'post-1' },
-    { slug: 'post-2' },
+    { slug: '2025f-deep-dive-setup-py' },
+    { slug: '2025f-free5gc-dpi' },
   ];
 }
 
