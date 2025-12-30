@@ -19,7 +19,7 @@ const postMetaMap: Record<string, PostMeta> = {
   "2025f-free5gc-dpi": {
     title: "c1ydeh's page - Efficient and Hardware-Independent Deep Packet Inspection for Free5GC",
     description: "This is the technical article to record the step of issue solving on solvcon/solvcon GitHub Actions. Due to lack of shared object of packaging, it's necessary to clearify the problem first, then trying to find a good practice to solve the issue.",
-    coverImage: "/blog/2025f-free5gc-dpi/free5gc-dpi.png",
+    coverImage: "/image/blog/2025f-free5gc-dpi/cover.png",
   },
   "2025f-deep-dive-setup-py": {
     title: "c1ydeh's page - Solve solvcon CI issue by deep dive setup.py in modmesh",
@@ -39,6 +39,7 @@ export async function generateMetadata(
   }
 
   return {
+    metadataBase: new URL('https://c1ydeh.net'),
     title: meta.title,
     description: meta.description,
     openGraph: {
