@@ -5,9 +5,8 @@ import DeepDiveSetupPy from "@/blog/2025f-deep-dive-setup-py/content.mdx"
 
 import { useEffect, useState } from "react";
 import { Breadcrumb } from "antd";
-import Link from "next/link";
 
-export const mdxComponents = {
+const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) =>
     <h1 className="text-4xl font-bold mt-8" {...props} />,
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) =>
@@ -20,17 +19,17 @@ export const mdxComponents = {
   a: (props: React.HTMLAttributes<HTMLAnchorElement>) => <a className="underline text-blue-500" {...props} />,
 };
 
+const posts: Record<string, React.ReactNode> = {
+    "2025f-free5gc-dpi": <Free5GCDPI components={mdxComponents}></Free5GCDPI>,
+    "2025f-deep-dive-setup-py": <DeepDiveSetupPy components={mdxComponents}></DeepDiveSetupPy>
+}
+
 export default function BlogContentClient({
   slug,
 }: {
   slug: string;
 }) {
   const [currentPost, setCurrentPost] = useState<React.ReactNode | null>(null);
-
-  const posts: Record<string, React.ReactNode> = {
-    "2025f-free5gc-dpi": <Free5GCDPI components={mdxComponents}></Free5GCDPI>,
-    "2025f-deep-dive-setup-py": <DeepDiveSetupPy components={mdxComponents}></DeepDiveSetupPy>
- }
 
   useEffect(() => {
     setCurrentPost(posts[slug]);
